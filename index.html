@@ -8,10 +8,35 @@
 </head>
 
 <body>
+    <!-- Botón "Ir Arriba" -->
+    <button onclick="irArriba()" id="btnIrArriba" title="Ir Arriba">⬆️</button>
+
+    <!-- Agregar el script al final -->
+    <script>
+        // Mostrar u ocultar el botón al hacer scroll
+        window.onscroll = function() {mostrarBotonIrArriba()};
+
+        function mostrarBotonIrArriba() {
+            const btnIrArriba = document.getElementById("btnIrArriba");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btnIrArriba.style.display = "block"; // Mostrar el botón
+            } else {
+                btnIrArriba.style.display = "none"; // Ocultar el botón
+            }
+        }
+        // Función para desplazarse suavemente hacia arriba
+        function irArriba() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
     <!-- Encabezado de la página -->
     <header>
         <h1>Prohibido Estar Trompudo</h1>
         <span class="menu-hamburguesa" onclick="toggleMenu()">☰</span>
+    </header>
         <nav>
             <ul id="menu" class="oculto">
                 <li><a href="#inicio">Inicio</a></li>
@@ -46,6 +71,7 @@
             <p>Observa algunas imágenes como prueba.</p>
         </section>
 
+        <!-- Sección de Programas Emitidos -->
         <section id="programasEmitidos">
             <h2>Programas Emitidos</h2>
             <p>Aquí encontrarás algunos programas emitidos recientemente.</p>
