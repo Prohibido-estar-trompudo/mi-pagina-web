@@ -11,6 +11,7 @@
     <!-- Encabezado de la página -->
     <header>
         <h1>Prohibido Estar Trompudo</h1>
+        <span class="menu-hamburguesa" onclick="toggleMenu()">☰</span>
         <nav>
             <ul id="menu" class="oculto">
                 <li><a href="#inicio">Inicio</a></li>
@@ -20,6 +21,13 @@
             </ul>
         </nav>
     </header>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('oculto');
+        }
+    </script>
 
     <!-- Menú de navegación -->
     <nav>
@@ -39,11 +47,10 @@
             <p>Observa algunas imágenes como prueba.</p>
         </section>
 
-        <!-- Sección de Programas Emitidos -->
         <section id="programasEmitidos">
             <h2>Programas Emitidos</h2>
             <p>Aquí encontrarás algunos programas emitidos recientemente.</p>
-
+        
             <!-- Galería de videos desde Google Drive -->
             <section id="videos">
                 <h3>Galería de Videos</h3>
