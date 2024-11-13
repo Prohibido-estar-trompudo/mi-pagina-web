@@ -7,6 +7,27 @@ body {
     color: #343a40;
 }
 
+/* Estilos del botón "Ir Arriba" */
+#btnIrArriba {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out;
+}
+
+#btnIrArriba:hover {
+    background-color: #E94B3C;
+}
+
 /* Encabezado */
 header {
     background: linear-gradient(to right, #F4AAB2, #E94B3C, #F0806E, #2A3141);
