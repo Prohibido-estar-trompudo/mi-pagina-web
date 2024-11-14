@@ -6,68 +6,51 @@
     <title>Mi Sitio Web</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
     <!-- Botón "Ir Arriba" -->
     <button onclick="irArriba()" id="btnIrArriba" title="Ir Arriba">⬆️</button>
 
-    <!-- Agregar el script al final -->
     <script>
-        // Mostrar u ocultar el botón al hacer scroll
-        window.onscroll = function() {mostrarBotonIrArriba()};
+        // Script para el botón "Ir Arriba"
+        window.onscroll = function() { mostrarBotonIrArriba() };
 
         function mostrarBotonIrArriba() {
             const btnIrArriba = document.getElementById("btnIrArriba");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                btnIrArriba.style.display = "block"; // Mostrar el botón
-            } else {
-                btnIrArriba.style.display = "none"; // Ocultar el botón
-            }
+            btnIrArriba.style.display = (window.scrollY > 100) ? "block" : "none";
         }
-        // Función para desplazarse suavemente hacia arriba
+
         function irArriba() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
+
     <!-- Encabezado de la página -->
     <header>
         <h1>Prohibido Estar Trompudo</h1>
-        <span class="menu-hamburguesa" onclick="toggleMenu()">☰</span>
     </header>
-        <nav>
-            <ul id="menu" class="oculto">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#programasEmitidos">Programas Emitidos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('oculto');
-        }
-    </script>
 
     <!-- Menú de navegación -->
     <nav>
-        <ul>
+        <ul id="menu" class="visible">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#programasEmitidos">Programas Emitidos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
+    <script>
+        // Script para el menú hamburguesa
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('oculto');
+        }
+    </script>
+
     <!-- Sección principal -->
     <main>
         <!-- Sección de Inicio -->
         <section id="inicio">
             <h2>Inicio</h2>
-            <img src="img/Mosaicoradio. ai.png" alt="Imagen de bienvenida" width="470"> <!-- Imagen de bienvenida -->
+            <img src="img/Mosaicoradio. ai.png" alt="Imagen de bienvenida" width="470">
             <p>Observa algunas imágenes como prueba.</p>
         </section>
 
@@ -75,25 +58,50 @@
         <section id="programasEmitidos">
             <h2>Programas Emitidos</h2>
             <p>Aquí encontrarás algunos programas emitidos recientemente.</p>
-        
+
             <!-- Galería de videos desde Google Drive -->
             <section id="videos">
                 <h3>Galería de Videos</h3>
-                <div class="video-container">
-                    <!-- Video 1 -->
-                    <iframe src="https://drive.google.com/file/d/1OfuqnR0Xr0VJ74GLJS_P8MdGdlGrpl_h/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
-        
-                    <!-- Video 2 -->
-                    <iframe src="https://drive.google.com/file/d/1isiCuJh1ae3kU0pj-zFeLA4W-UQP9bW1/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
-        
-                    <!-- Video 3 -->
-                    <iframe src="https://drive.google.com/file/d/1Kk2d6Zx4FW7HgV8vLEcwuZ8bhdUKBrxT/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
-        
-                    <!-- Video 4 -->
-                    <iframe src="https://drive.google.com/file/d/1cNFOSwNNAUW_JNH0KklpB_J6DzkPH6hK/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
-                    
-                    <!-- Video 4 -->
-                    <iframe src="https://drive.google.com/file/d/1Eq0EMk_plLFgfYxIH2Gj02htVaAiR4XS/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
+                <div class="videos-container">
+                    <!-- Primer video con texto encapsulado debajo -->
+                    <div class="video-izquierda">
+                        <iframe src="https://drive.google.com/file/d/1OfuqnR0Xr0VJ74GLJS_P8MdGdlGrpl_h/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
+                        <div class="encapsulado-texto">
+                            <p>Programa 1. En este programa de Bienvenida hablaremos de los últimos eventos de la industria, la polémica y la farándula mezclado con comedia, sumérgete con nosotros en este mundo. Acompáñanos en este mundo de risas y diversión. ¡Esto es prohibido estar trompudo!</p>
+                        </div>
+                    </div>
+
+                    <!-- Segundo video con texto encapsulado debajo -->
+                    <div class="video-centro">
+                        <iframe src="https://drive.google.com/file/d/1isiCuJh1ae3kU0pj-zFeLA4W-UQP9bW1/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
+                        <div class="encapsulado-texto">
+                            <p>Programa 2. Hoy hablaremos sobre los Cantos y Encantos de la industria musical, artistas en ascenso, viejas estrellas, polémicas de Diddy y mucho más, solo aquí en ¡Prohibido estar trompudo!</p>
+                        </div>
+                    </div>
+
+                    <!-- Tercer video con texto encapsulado debajo -->
+                    <div class="video-derecha">
+                        <iframe src="https://drive.google.com/file/d/1Kk2d6Zx4FW7HgV8vLEcwuZ8bhdUKBrxT/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
+                        <div class="encapsulado-texto">
+                            <p>Programa 3. El día de hoy hablaremos sobre la industria del cine, la cual tiembla y no por temblores. Tenemos los escíndalos y polémicas por la aparición de nuevas técnicas de producciones incluida la IA en este medio del cine. Acompáñanos y entérate de estoy más en ¡prohibido estar trompudo!!</p>
+                        </div>
+                    </div>
+
+                    <!-- Cuarto video con texto encapsulado debajo -->
+                    <div class="video-izquierda">
+                        <iframe src="https://drive.google.com/file/d/1cNFOSwNNAUW_JNH0KklpB_J6DzkPH6hK/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
+                        <div class="encapsulado-texto">
+                            <p>Programa 4. En la edición de los trompudos del día de hoy, hablaremos de POP Mania, todo sobre la cultura pop de tus series, películas y videojuegos favoritos, esto y mucho mas en el programa de hoy, no te lo pierdas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Quinto video con texto encapsulado debajo -->
+                    <div class="video-izquierda">
+                        <iframe src="https://drive.google.com/file/d/1Eq0EMk_plLFgfYxIH2Gj02htVaAiR4XS/preview" width="320" height="240" allow="autoplay" allowfullscreen></iframe>
+                        <div class="encapsulado-texto">
+                            <p>Programa 5. Hoy hablaremos del evento del momento que se viene en la industria musical, los Grammys, pero su contraparte Mnet Asian Music Awards de Korea, y como estas diferencias repercuten en los fanáticos, son tomado en cuenta? Averigualo solo aqui. En ¡Prohibido estar trompudo!</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
@@ -101,7 +109,6 @@
         <!-- Sección de Contacto -->
         <section id="contacto">
             <h2>Contacto</h2>
-            <img src="img/Prohibido estar trompudo.png" alt="Imagen de contacto" width="470">
             <img src="img/Prohibido estar trompudo.png" alt="Imagen de contacto" width="470">
         </section>
     </main>
