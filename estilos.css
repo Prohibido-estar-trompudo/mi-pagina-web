@@ -1,293 +1,227 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #F4AAB2, #E94B3C, #F0806E, #2A3141);
-    color: #343a40;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #F4AAB2, #E94B3C, #F0806E, #2A3141);
+  color: #343a40;
 }
 
 /* Estilos del botón "Ir Arriba" */
 #btnIrArriba {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    font-size: 18px;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease-in-out;
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
 }
 
 #btnIrArriba:hover {
-    background-color: #E94B3C;
+  background-color: #E94B3C;
 }
 
 /* Encabezado */
 header {
-    background: linear-gradient(to right, #F4AAB2, #E94B3C, #F0806E, #2A3141);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #F4AAB2, #E94B3C, #F0806E, #2A3141);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-    animation: animarTitulo 1s ease-out;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  animation: animarTitulo 1s ease-out;
 }
-
-
-/* Menú hamburguesa */
-.menu-hamburguesa {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-}
-
-/* Menú flotante en pantalla completa */
-.menu-flotante {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
-
-
-.menu-flotante ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.menu-flotante ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.menu-flotante ul li a:hover {
-    background-color: #FF4500;
-}
-
-/* Mostrar menú flotante */
-.menu-flotante.activo {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .menu-hamburguesa {
-        display: block;
-    }
-
-    nav ul {
-        display: none; /* Ocultar menú estándar en móviles */
-    }
-}
-
 
 
 /* Animación para el título */
 @keyframes animarTitulo {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Menú de navegación */
 nav {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #FF4500;
-    text-decoration: underline;
+  background-color: #FF4500;
+  text-decoration: underline;
 }
 
-/* Sección "Inicio" */
+/* Menú hamburguesa */
+.menu-hamburguesa {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+/* Menú de navegación */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #FF4500;
+  border-radius: 5px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Sección de Inicio (centrado) */
 #inicio {
-    padding: 20px 10px;
-    text-align: center;
-    border-bottom: 3px solid black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 3px solid black;
 }
 
-/* Galería de imágenes */
-.galeria-imagenes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+#inicio img {
+  width: 100%;
+  max-width: 470px; /* Limita el tamaño máximo de la imagen */
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.imagen {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Sección "Programas Emitidos" */
+/* Sección de Programas Emitidos */
 #programasEmitidos {
-    padding: 20px 10px;
-    text-align: center;
-    border-bottom: 3px solid black;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Sección de videos */
 #videos {
-    padding: 20px 10px;
-    text-align: center;
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
+/* Estilos para el texto debajo del primer video */
+.encapsulado-texto {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* Videos */
 .videos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-video {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    border: 3px solid #FFFFFF;
-    border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* Sección "Contacto" */
 #contacto {
-    padding: 20px 10px;
-    text-align: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#contacto img {
+  width: 90%;
+  max-width: 470px;
+  margin-top: 20px; /* Un poco de margen superior */
 }
 
 /* Pie de página */
 footer {
-    background-color: #FFFFFF;
-    color: #343a40;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
+  background-color: #FFFFFF;
+  color: #343a40;
+  text-align: center;
+  padding: 10px 0;
 }
 
-footer a {
-    color: #343a40;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Botones */
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Encabezados de secciones */
-section h2 {
-    color: white;
-}
-
-/* Menú responsivo */
-.menu-hamburguesa {
-    display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
-}
-
-/* Estilos responsivos */
+/* Responsivo */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
+  .menu-hamburguesa {
+    display: block;
+  }
 
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        display: none; /* Ocultar menú en pantallas pequeñas */
-    }
-
-    .menu-hamburguesa {
-        display: block;
-        text-align: right;
-        padding: 10px;
-    }
-
-    /* Mostrar menú cuando se active el menú hamburguesa */
-    #menu.oculto {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Ajuste de secciones */
-    section {
-        padding: 15px;
-    }
-
-    .videos-container {
-        flex-direction: column;
-    }
-}
-
-/* Clase para ocultar elementos */
-.oculto {
+  nav ul {
     display: none;
+  }
+
+  #menu.oculto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .videos-container {
+    flex-direction: column;
+  }
+
+  /* Ajuste para imágenes de contacto en dispositivos pequeños */
+  #contacto img {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 10px;
+  }
+
+  /* Ajustar imagen de inicio en dispositivos pequeños */
+  #inicio img {
+    width: 100%;
+    max-width: 400px;
+  }
 }
